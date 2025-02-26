@@ -3,15 +3,17 @@
 - created: 2024-11-05
 - last modified: 2024-12-20
 - change log:
-    2024-11-28
-    - (done) preload at one time
-    - (done) mark different phases (data:{phase: prac/experiment})
+    2025-02-26
+    - (done) added browser check
     2024-12-05
     - (done) add break time
     - (done) description of "訛りの発音" (accented speech)
     - (done) add informed consent
     - (done) add background information collection
     - (done) move experiment to github 
+    2024-11-28
+    - (done) preload at one time
+    - (done) mark different phases (data:{phase: prac/experiment})
 
 */
 
@@ -148,6 +150,11 @@ var fullscreen = {
 
 };
 
+//browser-check 
+var browser_check ={
+    type:jsPsychBrowserCheck
+};
+
 //Introduction
 var title = {
     type: jsPsychHtmlButtonResponse,
@@ -157,8 +164,6 @@ var title = {
     choices: [],
     trial_duration: 2000,
 };
-
-
 
 
 var instruction_1 = {
@@ -530,6 +535,6 @@ var save_local_trial = {
 };
 
 
-var timeline = [pavlovia_init, preload, name_input, vol_test, fullscreen, title, instruction_1, instruction_2, instruction_3, prac_trial, prac_end, sent_trial, breaktime, after_break, word_trial, pavlovia_finish, save_local_trial, ending,  exit_fullscreen];
+var timeline = [pavlovia_init, preload, name_input, vol_test, fullscreen, browser_check, title, instruction_1, instruction_2, instruction_3, prac_trial, prac_end, sent_trial, breaktime, after_break, word_trial, pavlovia_finish, save_local_trial, ending,  exit_fullscreen];
 
 jsPsych.run(timeline);
