@@ -67,8 +67,8 @@ var name_input = {
     questions: [
       {prompt: `
       <div style="display: flex; align-items: center;">
-        <span style="white-space: nowrap; margin-right: 10px; font-size: 30px; line-height: 1.5">お名前をローマ字で入力してください：</span>
-      </div>`, placeholder: "Yamada Taro", name: 'participant_name', required: true}
+        <span style="white-space: nowrap; margin-right: 10px; font-size: 30px; line-height: 1.5">Please enter your full name：</span>
+      </div>`, placeholder: "e.g., Sam Smith", name: 'participant_name', required: true}
     ],
     on_finish: function(data) {
       // 将姓名保存到全局数据中
