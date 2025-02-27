@@ -4,6 +4,7 @@
 - last modified: 2024-12-20
 - change log:
     2025-02-26
+    - change the lang to ENG
     - (done) added browser check
     2024-12-05
     - (done) add break time
@@ -86,25 +87,25 @@ var vol_test_audio = {
     type: jsPsychHtmlButtonResponse,
     stimulus:`
     <h1>
-    実験を始める前に、音量調節をお願いいたします。
+    Before starting the experiment, please adjust the volume.
     </h1>
     <p>
-    適切な音量に調節するまで、下の「再生」ボタンを押して、音量を確認しながら調節してください。
+    Please press the "Play" button below and adjust the volume while checking until it reaches an appropriate level.
     </p>
 
     <audio id="vol-test-stimulus" src="stimuli/word/FAS_E1M-LNTW-01-16.wav"></audio>
-    <button id="play-button">再生する</button>
+    <button id="play-button">Play</button>
     
     <p>
     
-    音量が自分の好みになるまで何回でも再生可能です。
-    「この音量で一番聞き取れやすくて、負担がない」と自分にとって最適な音量に調節できたら、
+    You can play the audio as many times as you like until the volume suits your preference.
+    Once you've adjusted the volume to a level that is the easiest to hear and most comfortable for you.
     
-    下のボタンを押して、次のページで聞いた内容を入力してください。
-    音量がちゃんと聞こえるように調節したと確認のためなので、少し間違っていても構いません。
+    Press the button below and enter what you heard on the next page.
+    This is just to confirm that you can hear the audio clearly, so it's okay if you make a few mistakes.
     </p>
   `,
-  choices: ['入力画面に進む'],
+  choices: ['Proceed to the Input Screen'],
   on_load: function() {
     var audioElement = document.getElementById('vol-test-stimulus');
     var playButton = document.getElementById('play-button');
@@ -121,7 +122,7 @@ var vol_test_input = {
       {prompt: `
       <div style="display: flex; align-items: center;">
         <span style="white-space: nowrap; margin-right: 10px; font-size: 30px; line-height: 1.5">
-        聞いた英単語を入力してください：
+        Please enter the English word you heard.：
         </span>
       </div>`, placeholder:"the English word you've heard", name: "vol-word", required: true, rows: 3, columns: 50}
     ]
@@ -136,17 +137,17 @@ var fullscreen = {
     type: jsPsychFullscreen,
     message: `
     <h1 style="font-size: 40px; text-align: left;">
-    実験を始める前に：本実験の注意事項
+    Before Starting the Experiment: Important Notes for This Experiment
     </h1>
     <p>
-    ☑️ Macの場合は、お手数をおかけしますが、Safari以外のブラウザがおすすめです。
-    ☑️ ヘッドホンのご装着をお願いいたします。
-    ☑️ スマホや他のスマートデバイスをミュートにしていただけますよう、お願いいたします。
-    ☑️ 実験が終わる前に、全画面モードの終了や他のアプリのご使用をお控えますよう、よろしくお願いいたします。
+    ☑️ For Mac users, we recommend using a browser other than Safari.
+    ☑️ Please wear headphones.
+    ☑️ Kindly mute your smartphone and other smart devices.
+    ☑️ Please avoid exiting full-screen mode or using other applications before the experiment is completed.
 
-    上記の注意事項を確認済みであれば、下のボタンをクリックすると、ブラウザが全画面モードに変わります。
+    If you have confirmed the above precautions, click the button below to switch your browser to full-screen mode.
     </p>`,
-    button_label: "注意事項を全部確認しました。全画面モードに入ります。"
+    button_label: "I have checked all the precautions. Enter full-screen mode."
 
 };
 
@@ -159,7 +160,7 @@ var browser_check ={
 var title = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
-    <h1 style = "font-size: 60px; width: 100%;">英語発音の知覚実験</h1>
+    <h1 style = "font-size: 60px; width: 100%;">English Pronunciation Perception Experiment</h1>
     `,
     choices: [],
     trial_duration: 2000,
@@ -170,42 +171,47 @@ var instruction_1 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1>
-    インストラクション：この実験では何をするの？
+    Instructions: What will you do in this experiment?
     </h1>
     <p style="width:100%">
-    この実験では２つの英語の音声がペアで流されます。
+    In this experiment, two English audio clips will be played as a pair.
 
-    音声の内容は少し早く見られるように設定されています。
+    The content of the audio will be displayed slightly earlier.
 
-    音声の内容を見ながら、流された２つの音声を聞き、
+    While listening to the pair of audio clips and looking at the content,
 
-    違う訛りの英語発音ペアであれば<span style="background-color: yellow;">[ F ]キー</span>を、
+    if the pair has different accents, press the <span style="background-color: yellow;">[ F ] key</span>, 
 
-    同じ訛りの英語発音ペアであれば <span style="background-color: yellow;">[ J ]キー</span>を<u>できるだけ早く正確に</u>押してください。
+    if the pair has the same accent, press the <span style="background-color: yellow;">[ J ] key</span> 
+    <u>as quickly and accurately as possible</u>
 
-    この実験では同じ発音／違う発音の判断をする際の正答率が記録されます。
+    This experiment will record the accuracy and speed of your judgments on whether the pronunciations are the same or different.
     </p>
     `,
-    choices: ['「訛りの発音」次のページへ'],
+    choices: ['Next page'],
 };
 
 var instruction_2 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1>
-    インストラクション：訛りの発音とは？
+    Instructions: What is an accented pronunciation?
     </h1>
     <p style="width: 70%">
-    以下の内容に対するご理解は、本実験の結果に重要な影響がありますので、読んでいただけますよう、よろしくお願いいたします。
+    Your understanding of the following content is crucial to the results of this experiment, so please read it carefully.
 
-    本実験では、「訛り」というのは、母語話者の発音のバリエーションではなく、母語が異なる話者が持つ「母語訛り」のことを指しています。母語話者の発音は地域によって、多くのバリエーションが存在しますが、本研究が重視しているのは母語話者と非母語話者の英語発音の違い、かつ母語が異なる非母語話者間の違いです。
+    In this experiment, "accent" does not refer to the variations in pronunciation among native speakers. Instead, it refers to the "foreign accent" of speakers whose native language is different from English. Although native speakers have many regional pronunciation variations, this study focuses on the differences between native and non-native English speakers, as well as differences among non-native speakers whose native languages differ.
 
-    つまり、「違う訛りの英語発音ペア」というのは母語話者と非母語話者の英語発音ペア、あるいはA母語の非母語話者とB母語の非母語話者の英語発音ペアです。
+    Therefore, a "pair of English pronunciations with different accents" refers to:
 
-    上記の内容が理解できましたら、下のボタンを押すと、実験の手順に関する説明に入ります。
+    - A pair consisting of a native speaker and a non-native speaker, or
+    
+    - A pair of non-native speakers whose native languages are different (e.g., Speaker A whose native language is Language A and Speaker B whose native language is Language B).
+
+    If you understand the above explanation, click the button below to proceed to the instructions on the experiment's procedure.
     </p>
     `,
-    choices: ['理解できました、次のページへ'],
+    choices: ['Understood. Go to next page.'],
 };
 
 
@@ -213,20 +219,21 @@ var instruction_3 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1>
-    インストラクション：実験の手順に関するご説明
+    Instructions: Explanation of the Experiment Procedure
     </h1>
     <p>
-    音声は常に凝視点（＋）の直後に流されますので、凝視点（＋）が提示されたら、必ずそのポイントに注目してください。
+    The audio will always play immediately after the fixation point (+) is displayed, so please make sure to focus on the fixation point when it appears.
 
-    この発音知覚実験はおおむね５０分程度で終了の予定ですが、途中で休憩ポイントが1回あります。
-    休憩ポイントでは遠慮なく休憩してください（例：目を閉じるや深呼吸等）。
+    This pronunciation perception experiment is expected to take approximately 50 minutes to complete.
+    There will be one break point during the experiment.
+    Feel free to take a break during this time (e.g., closing your eyes, taking deep breaths, etc.).
 
-    ボタンを早く押すために、常に[ F ]と[ J ]のキーの上に指を置いてください。
-    まず実験の手順に慣れていただくために、練習を１２問準備しました。
-    準備ができましたら、 下のボタンを押して練習へ進んでください。
+    To respond quickly, keep your fingers on the [ F ] and [ J ] keys at all times.
+    To help you get familiar with the procedure, there are 12 practice questions prepared.
+    When you are ready, click the button below to proceed to the practice session.
     </p>
     `,
-    choices: ['練習のセッションへ'],
+    choices: ['Go to practice session'],
     data: {
         phase: 'intro',
         deviceInfo: {
@@ -259,7 +266,7 @@ var sti_content = {
     stimulus:  function() {
         return `
             <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-            音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+            The content of this audio is 「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
             </p>`;
     },
     choices: "NO_KEYS",
@@ -274,7 +281,7 @@ var sound1 = {
     prompt: function() {
         return `
         <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-        音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+        The content of this audio is 「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
         </p>`},
     trial_ends_after_audio: true,
 };
@@ -285,7 +292,7 @@ var delay = {
     stimulus:function() {
         return `
         <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-        音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+        The content of this audio is 「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
         </p>`},
     choices: 'NO_KEYS',
     trial_duration: 500,
@@ -300,7 +307,7 @@ var sound2 = {
     prompt: function() {
         return `
         <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-        音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+        The content of this audio is 「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
         </p>`},
     trial_ends_after_audio: true
 };
@@ -311,19 +318,21 @@ var prac_response = {
     stimulus: function() {
         return `
         <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-        音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+        The content of this audio is 「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
         </p>
     <p style="width: 100%"> 
-    違う訛りの英語発音であれば<span style="background-color: yellow;">[ F ]キー</span>を、同じ訛りの英語発音であれば <span style="background-color: yellow;">[ J ]キー</span>を<u>押してください</u>。
+    Press <span style="background-color: yellow;">[ F ] key</span>if the accents are different. 
+    Press <span style="background-color: yellow;">[ J ] key</span> if the accents are the same.
+    <u>Please press the key accordingly.</u>
     </p>`},
     choices: ['f','j'],
     prompt: `
     <div style="display: flex; justify-content: space-around; margin-top: 20px;">
         <div style="display: inline-block; padding: 15px 25px; margin-top: 20px; border: 2px solid #007bff; border-radius: 10px; background-color: #e7f3ff; color: #007bff; font-size: 18px;">
-            違うの場合は [F] キーを                   
+            if different press [F] key                   
         </div>
         <div style="display: inline-block; padding: 15px 25px; margin-top: 20px; border: 2px solid #007bff; border-radius: 10px; background-color: #e7f3ff; color: #007bff; font-size: 18px;">
-            同じの場合は [J] キーを                   
+            if same press [J] key                   
         </div>
     </div>
         `,
@@ -352,15 +361,15 @@ var prac_end = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1 style = "width:100%">
-    練習はこれで終わりです。
+    The practice session is now over.
     </h1>
     <p>
-    この時点でご質問等ありましたら、Webページを閉じずに、研究員にお尋ねください。
+    If you have any questions at this point, please do not close this webpage and contact the researcher.
 
-    実験の手順に関してご質問がないようでしたら、下のボタンを押すと、実験が始まります。
+    If you have no questions regarding the experiment procedure, click the button below to start the experiment.
     </p>
     `,
-    choices: ['準備できました、実験を始めます！'] 
+    choices: ['I’m ready. Starting the experiment!'] 
 };
 
 
@@ -371,19 +380,21 @@ var sent_response = {
     stimulus:  function() {
         return `
         <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-        音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+        The content of the audio is「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
         </p>
     <p style="width: 100%"> 
-    違う訛りの英語発音であれば<span style="background-color: yellow;">[ F ]キー</span>を、同じ訛りの英語発音であれば <span style="background-color: yellow;">[ J ]キー</span>を<u>押してください</u>。
+    Press <span style="background-color: yellow;">[ F ] key</span>if the accents are different. 
+    Press <span style="background-color: yellow;">[ J ] key</span> if the accents are the same.
+    <u>Please press the key accordingly.</u>
     </p>`},
     choices: ['f','j'],
     prompt: `
     <div style="display: flex; justify-content: space-around; margin-top: 20px;">
         <div style="display: inline-block; padding: 15px 25px; margin-top: 20px; border: 2px solid #007bff; border-radius: 10px; background-color: #e7f3ff; color: #007bff; font-size: 18px;">
-            違うの場合は [F] キーを                   
+            if different press [F] key                   
         </div>
         <div style="display: inline-block; padding: 15px 25px; margin-top: 20px; border: 2px solid #007bff; border-radius: 10px; background-color: #e7f3ff; color: #007bff; font-size: 18px;">
-            同じの場合は [J] キーを                   
+            if same press [J] key                   
         </div>
     </div>
     `,
@@ -411,19 +422,19 @@ var breaktime = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1>
-    休憩のお時間です！お疲れ様です！
+    It’s break time! Great job so far!
     </h1>
     <p style="width:100%">
-    これまでの実験、いかがですか？
+    How has the experiment been so far?
 
-    大変かと思いますが、あと少しで終わります。
+    It might be challenging, but you’re almost there.
 
-    少し体を動かしたり、水分補給をしたりして、５分以内の休憩を取りましょう。
+    Take a short break—move around a bit or drink some water. Please keep it within 5 minutes.
 
-    休憩が終わりましたら、下のボタンを押して、実験を続けてください。
+    Once you’re ready to continue, click the button below to resume the experiment.
     </p>
     `,
-    choices: ['休憩完了です。'],
+    choices: ["I'm OK, continue the experiment "],
     trial_duration: 300000, // 5mins
     response_ends_trial:true,
 };
@@ -433,9 +444,9 @@ var after_break = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1 style="width:100%">
-    実験に戻りましょう！
+    Let’s get back to the experiment!
     </h1>`,
-    choices: ['続けます！'],
+    choices: ['Continue'],
 };
 
 
@@ -445,19 +456,21 @@ var word_response = {
     stimulus:  function() {
         return `
         <p style= "white-space: nowrap;text-align: center; padding: 20px; background-color: lightgray;">
-        音声の内容は「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
+        The content of audio is「<strong>${jsPsych.timelineVariable('Content')}</strong>」 
         </p>
     <p style="width: 100%"> 
-    違う訛りの英語発音であれば<span style="background-color: yellow;">[ F ]キー</span>を、同じ訛りの英語発音であれば <span style="background-color: yellow;">[ J ]キー</span>を<u>押してください</u>。
+    Press <span style="background-color: yellow;">[ F ] key</span>if the accents are different. 
+    Press <span style="background-color: yellow;">[ J ] key</span> if the accents are the same.
+    <u>Please press the key accordingly.</u>
     </p>`},
     choices: ['f','j'],
     prompt: `
     <div style="display: flex; justify-content: space-around; margin-top: 20px;">
         <div style="display: inline-block; padding: 15px 25px; margin-top: 20px; border: 2px solid #007bff; border-radius: 10px; background-color: #e7f3ff; color: #007bff; font-size: 18px;">
-            違うの場合は [F] キーを                   
+            if different press [F] key                   
         </div>
         <div style="display: inline-block; padding: 15px 25px; margin-top: 20px; border: 2px solid #007bff; border-radius: 10px; background-color: #e7f3ff; color: #007bff; font-size: 18px;">
-            同じの場合は [J] キーを                   
+            if same press [J] key                   
         </div>
     </div>
     `,
@@ -480,6 +493,28 @@ var word_trial = {
     randomize_order: true,
 };
 
+//save the results
+
+var save_local_trial = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `
+    <p style="width = 100%">
+    The experiment result data has been uploaded. Please also save a local copy.
+
+    Click the button below to save the experiment result file.
+    </p>
+    `,
+    choices: ['Save the experiment result file.'],
+    on_finish: function() {
+        const participant_name = jsPsych.data.get().filter({trial_type: 'survey-text'}).values()[0].response.participant_name;
+        const safeParticipantName = participant_name.replace(/[^a-zA-Z0-9_\-]/g, '_');
+        const timestamp = new Date();
+        const formattedts = timestamp.toISOString().split('.')[0].replace(/[:.-]/g, '_');
+        const fileName = `${safeParticipantName}_${formattedts}.csv`
+        jsPsych.data.get().localSave('csv', fileName);
+    }
+};
+
 
 //ending
 
@@ -487,17 +522,17 @@ var ending = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
     <h1 style="text-align:left; ">
-    ご協力ありがとうございます。大変お疲れ様です。
-    実験はこれで終わります。
+    Thank you for your cooperation, and great job!
+    The experiment is now completed.
     </h1>
     <p> 
-    お手数をおかけしますが、実験完了後、研究者にその旨をご連絡いただき、実験結果のファイルを添付してメールで送信してください。
+    We kindly ask you to contact the researcher to inform them of the experiment’s completion and to attach the result file in an email. (email: wang.zhiyan.w1@s.mail.nagoya-u.ac.jp)
 
-    また、ご質問がございましたら、いつでもご連絡いただければ幸いです。
+    If you have any questions, please feel free to reach out at any time.
     
-    ファイルを保存したと確認できたら、下のボタンを押していただいて、実験が終わります。
+    Once you have confirmed that the file has been saved, click the button below to end the experiment.
     </p>`,
-    choices:["ファイルを保存しました。実験を終わります。"],
+    choices:["I have saved the file. End the experiment."],
     response_ends_trial: true
 };
 
@@ -511,27 +546,6 @@ var pavlovia_finish = {
     type: jsPsychPavlovia,
     command: "finish",
     participantID: "participant_name",
-};
-
-
-var save_local_trial = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: `
-    <p style="width = 100%">
-    実験結果データはアップロードしました。ローカルでの保存もお願いいたします。
-
-    下のボタンを押して、実験結果のファイルを保存してください。
-    </p>
-    `,
-    choices: ['実験結果ファイルを保存します。'],
-    on_finish: function() {
-        const participant_name = jsPsych.data.get().filter({trial_type: 'survey-text'}).values()[0].response.participant_name;
-        const safeParticipantName = participant_name.replace(/[^a-zA-Z0-9_\-]/g, '_');
-        const timestamp = new Date();
-        const formattedts = timestamp.toISOString().split('.')[0].replace(/[:.-]/g, '_');
-        const fileName = `${safeParticipantName}_${formattedts}.csv`
-        jsPsych.data.get().localSave('csv', fileName);
-    }
 };
 
 
