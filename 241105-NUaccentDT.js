@@ -549,6 +549,6 @@ var pavlovia_finish = {
 };
 
 
-var timeline = [pavlovia_init, preload, name_input, vol_test, fullscreen, browser_check, title, instruction_1, instruction_2, instruction_3, prac_trial, prac_end, sent_trial, breaktime, after_break, word_trial, pavlovia_finish, save_local_trial, ending,  exit_fullscreen];
+var timeline = [pavlovia_init, preload, name_input, vol_test, fullscreen, browser_check, title, instruction_1, instruction_2, instruction_3, prac_trial, prac_end, sent_trial, breaktime, after_break, word_trial, save_local_trial, pavlovia_finish, ending,  exit_fullscreen];
 
 jsPsych.run(timeline);
